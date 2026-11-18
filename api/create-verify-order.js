@@ -11,12 +11,15 @@ export default async function handler(req, res) {
     // YAHAN AAPKO APNE TRUST GATEWAY KI API CALL LAGANI HAI
     // Niche wala code ek example hai, aapko apne gateway ke docs ke hisaab se change karna hoga
 
-    const gatewayResponse = await fetch('https://api.trustgateway.com/v1/create-order', {
+    // ... (upar ka code same rahega)
+
+    const gatewayResponse = await fetch('https://api.bytrustgate.com/api/v1/create-order', { // 👈 URL yahan badla hai
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.TRUST_GATEWAY_API_KEY}`, // Vercel se key aayegi
+        'Authorization': `Bearer ${process.env.TRUST_GATEWAY_API_KEY}`,
         'Content-Type': 'application/json'
       },
+// ... (baaki ka code same rahega),
       body: JSON.stringify({
         amount: amount * 100, // Amount hamesha paise (cents) mein bhejte hain
         currency: "INR",
